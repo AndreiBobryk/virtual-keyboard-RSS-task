@@ -1,40 +1,45 @@
+function addEventListenerForKeys() {
+  const input = document.querySelector("textarea");
+  const keysRows1 = document
+    .querySelector(".keyboard__row")
+    .querySelectorAll(".key");
+  console.log(keysRows1);
 
+  keysRows1.forEach((key) => {
+    key.addEventListener("click", (e) => {
+      const posCursor = input.selectionStart;
 
-function addEventListenerForKeys () {
+      if (e.target.innerText.length === 1) {
+        input.setRangeText(e.target.innerText, posCursor, posCursor, "end");
 
-
-  const input = document.querySelector('textarea')
-  const keysRows1 = document.querySelector('.keyboard__row').querySelectorAll('.key');
-  console.log(keysRows1)
-
-  keysRows1.forEach(key => {
-      key.addEventListener('click', (e)=>{
-          
-          console.log(e.target.innerText);
-          console.log('Pos', input.selectionStart);
-          console.log('Pos_e_target', e.target.selectionStart)
-          console.log('length', input.value.length)
-          const posCursor = input.selectionStart;
-          const lengthValue = input.value.length
-        // if (posCursor === lengthValue) {
-        //   input.value += e.target.innerText;
-
-        // } else {
-        //   console.log('yet')
-          
-          
-        //   // let posCurr = posCursor;
-        //   // console.log(posCurr)
-          input.setRangeText(e.target.innerText, posCursor, posCursor, 'end')
-          
-
-        // }
-
-        
-          
-      })
-    })
+      } else {
+        switch (e.target.innerText) {
+          case 'Backspace':
+            console.log('backspace');
+            input.setRangeText('', posCursor-1, posCursor, "end");
+            break;
+        }
+      
+      }
+      
   
+    });
+  });
+
+
+  // Animation Click
+
+  keysRows1.forEach((key) => {
+    key.addEventListener("mousedown", (e) => {
+      e.target.classList.add("key_pressed");
+    });
+  });
+
+  keysRows1.forEach((key) => {
+    key.addEventListener("mouseup", (e) => {
+      e.target.classList.remove("key_pressed");
+    });
+  });
 }
 
 export default addEventListenerForKeys;

@@ -12,13 +12,14 @@
   }
 
   .keyboard {
-      width: 790px;
-      height: 100px;
+      width: 830px;
+      height: 500px;
       margin: 0 auto;
       border: solid 1px black;
   }
 
   .keyboard__row {
+      display: flex;
       width: 100%;
   }
 
@@ -37,6 +38,28 @@
       user-select: none;   
   }
 
-  .key_2x {
+  .key_125x {
+    width: 60px;
+  } 
+
+  .key_backspace {
+      width: 130px;
+  }
+
+  .key_capsLock {
       width: 90px;
+  }
+  .key_enter {
+      width: 133px;
+  }
+  .key_shift {
+      width: 114px;
+  }
+  .key_space {
+      width: 363px;
+  }
+
+  .key_pressed {
+      border-radius: 25px;
+      background: red;
   }

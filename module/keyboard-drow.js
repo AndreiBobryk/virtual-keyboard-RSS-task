@@ -2,14 +2,8 @@ import { dataEn, dataRu } from "./data.js";
 
 
 function domRender() {
-    // let dataEn = 0;
-    // if (shiftKey) {
-    //     dataEn = 1;
 
-    // } else {
-    //     dataEn = 0;
-    // }
-    let data;
+  let data;
   const wrapper = document.createElement("div");
   wrapper.classList.add("wrapper");
 
@@ -24,24 +18,109 @@ function domRender() {
 
   const keyboard = document.createElement("div");
   keyboard.classList.add("keyboard");
-
-  const keyboardRow = document.createElement("div");
-  keyboardRow.classList.add("keyboard__row");
-  const valueLocalStorage = localStorage.getItem('lang')
+  const valueLocalStorage = localStorage.getItem('lang');
   valueLocalStorage == 'en' ? data = dataEn : data = dataRu;
 
 
-  for (let i = 0; i < data.length; i++) {
+  // 1 row
+  const keyboardRow1 = document.createElement("div");
+  keyboardRow1.classList.add("keyboard__row");
+
+
+  for (let i = 0; i < 14; i++) {
     const key = document.createElement("div");
     key.classList.add("key");
     key.innerText = data[i][0];
-    if (i === data.length - 1) {
-      key.classList.add("key_2x");
+    if (i === 13) {
+      key.classList.add("key_backspace");
     }
-    keyboardRow.appendChild(key);
+    keyboardRow1.appendChild(key);
   }
 
-  keyboard.appendChild(keyboardRow);
+  keyboard.appendChild(keyboardRow1);
+
+
+    // 2 row
+    const keyboardRow2 = document.createElement("div");
+    keyboardRow2.classList.add("keyboard__row");
+  
+  
+    for (let i =14; i < 29; i++) {
+      const key = document.createElement("div");
+      key.classList.add("key");
+      key.innerText = data[i][0];
+      if (i === 14 || i === 28) {
+        key.classList.add("key_125x");
+      }
+      keyboardRow2.appendChild(key);
+    }
+  
+    keyboard.appendChild(keyboardRow2);
+
+    // 3 row
+    const keyboardRow3 = document.createElement("div");
+    keyboardRow3.classList.add("keyboard__row");
+  
+  
+    for (let i =29; i < 42; i++) {
+      const key = document.createElement("div");
+      key.classList.add("key");
+      key.innerText = data[i][0];
+      if (i === 29 ) {
+        key.classList.add("key_capsLock");
+      } 
+      if ( i === 41) {
+        key.classList.add("key_enter");
+      } 
+      keyboardRow3.appendChild(key);
+    }
+  
+    keyboard.appendChild(keyboardRow3);
+
+    // 4 row
+    const keyboardRow4 = document.createElement("div");
+    keyboardRow4.classList.add("keyboard__row");
+  
+  
+    for (let i =42; i < 55; i++) {
+      const key = document.createElement("div");
+      key.classList.add("key");
+      key.innerText = data[i][0];
+   
+      if (i === 42 || i === 54) {
+        key.classList.add("key_shift");
+      }
+      keyboardRow4.appendChild(key);
+    }
+  
+    keyboard.appendChild(keyboardRow4);
+
+    // 5 row
+    const keyboardRow5 = document.createElement("div");
+    keyboardRow5.classList.add("keyboard__row");
+  
+  
+    for (let i =55; i < 64; i++) {
+      const key = document.createElement("div");
+      key.classList.add("key");
+      key.innerText = data[i][0];
+      if (i === 55) {
+        key.classList.add("key_125x");
+      }
+      if (i === 58) {
+        key.classList.add("key_space");
+      }
+      if (i === 63) {
+        key.classList.add("key_125x");
+      }
+      keyboardRow5.appendChild(key);
+    }
+  
+    keyboard.appendChild(keyboardRow5);
+
+
+
+
   wrapper.appendChild(textarea);
   wrapper.appendChild(keyboard);
   document.body.appendChild(wrapper);
