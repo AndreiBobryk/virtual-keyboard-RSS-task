@@ -35,7 +35,6 @@ checkLang();
       flag = true;
       if (flag && event.altKey) {
         flag = false;
-        console.log("язык");
 
         checkLang();
         document.querySelectorAll(".key").forEach((key, index) => {

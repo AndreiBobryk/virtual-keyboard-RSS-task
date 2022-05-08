@@ -7,13 +7,13 @@
   .textarea {
       display: block;
       width: 700px;
-      height: 300px;
-      margin: 100px auto;
+      height: 150px;
+      margin: 20px auto;
   }
 
   .keyboard {
       width: 830px;
-      height: 500px;
+    //   height: 500px;
       margin: 0 auto;
       border: solid 1px black;
   }
@@ -34,8 +34,13 @@
       border: 1px solid black;
       border-radius: 4px;
       background: yellow;
+     transition: 0.3s;
     
-      user-select: none;   
+      user-select: none;  
+      &:hover {
+          background: grey;
+        
+      } 
   }
 
   .key_125x {
@@ -62,4 +67,8 @@
   .key_pressed {
       border-radius: 25px;
       background: red;
+      &:hover {
+        background: red;
+
+      }
   }

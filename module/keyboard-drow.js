@@ -1,4 +1,4 @@
-import { dataEn, dataRu } from "./data.js";
+import { dataEn, dataRu, code } from "./data.js";
 
 
 function domRender() {
@@ -124,6 +124,9 @@ function domRender() {
   wrapper.appendChild(textarea);
   wrapper.appendChild(keyboard);
   document.body.appendChild(wrapper);
+  document.querySelectorAll('.key').forEach((el, index) =>{
+    el.setAttribute('data', code[index] )
+  })
 }
 
 export default domRender;
