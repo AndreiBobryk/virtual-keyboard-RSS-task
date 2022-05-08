@@ -53,6 +53,13 @@
 
   .key_capsLock {
       width: 90px;
+      &_on {
+          border-radius: 24px;
+          background: green;
+          &:hover {
+            background: green;
+            }
+      }
   }
   .key_enter {
       width: 133px;

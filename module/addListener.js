@@ -28,6 +28,21 @@ function addEventListenerForKeys() {
            
             input.setRangeText('\t', posCursor, posCursor, "end");
             break;
+          case 'CapsLock':
+            const buttonCapsLock = document.querySelector('.key_capsLock');
+
+           buttonCapsLock.classList.toggle('key_capsLock_on');
+           if (buttonCapsLock.classList.contains('key_capsLock_on')) {
+            document.querySelectorAll('.key').forEach((el, index) => {
+              if (el.innerText.length ===1) el.innerText = el.innerText.toUpperCase();
+            })
+          } else {
+            document.querySelectorAll('.key').forEach((el, index) => {
+              if (el.innerText.length ===1) el.innerText = el.innerText.toLowerCase();
+            })
+          }
+            
+            break;
         }
       
       }
