@@ -1,0 +1,42 @@
+.wrapper {
+    max-width: 1280px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .textarea {
+      display: block;
+      width: 700px;
+      height: 300px;
+      margin: 100px auto;
+  }
+
+  .keyboard {
+      width: 790px;
+      height: 100px;
+      margin: 0 auto;
+      border: solid 1px black;
+  }
+
+  .keyboard__row {
+      width: 100%;
+  }
+
+  .key {
+      height: 45px;
+      width: 45px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.05rem;
+      margin: 3px;
+      border: 1px solid black;
+      border-radius: 4px;
+      background: yellow;
+    
+      user-select: none;   
+  }
+
+  .key_2x {
+      width: 90px;
+  }

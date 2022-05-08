@@ -1,0 +1,63 @@
+import { dataEn, dataRu } from "./data.js";
+
+function shiftKey() {
+  class KeyboardStation {
+    constructor() {
+      this.state = {
+        capsLock: false,
+        currentLang: "en",
+       
+      };
+    }
+  }
+  const stateKeyboard = new KeyboardStation;
+let data;
+ const checkLang = () => { 
+     const currentLang = stateKeyboard.state.currentLang;
+     if (currentLang == 'en') {
+      data = dataRu;
+      stateKeyboard.state.currentLang = 'ru';
+     
+  } else {
+      data = dataEn;
+      stateKeyboard.state.currentLang = 'en';
+ }
+ localStorage.setItem('lang', stateKeyboard.state.currentLang)
+}
+checkLang();
+  let flag = false;
+  document.addEventListener("keydown", (event) => {
+    console.log(event);
+    if (event.shiftKey) {
+      document.querySelectorAll(".key").forEach((key, index) => {
+        key.innerText = data[index][1];
+      });
+      flag = true;
+      if (flag && event.altKey) {
+        flag = false;
+        console.log("язык");
+
+        checkLang();
+        document.querySelectorAll(".key").forEach((key, index) => {
+            key.innerText = data[index][0];
+          });
+
+       
+      }
+    }
+
+   
+  });
+
+  document.addEventListener("keyup", (event) => {
+    if (event.shiftKey !== true) {
+      console.log("shift keyup");
+      document.querySelectorAll(".key").forEach((key, index) => {
+        console.log("rt");
+        key.innerText = data[index][0];
+      });
+    }
+  });
+}
+
+export default shiftKey;
