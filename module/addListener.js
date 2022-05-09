@@ -1,4 +1,4 @@
-// import KeyboardStation from "./classKeyboardStation.js";
+
 import isCapsLockPressed from "./capsLock.js";
 
 function addEventListenerForKeys() {
@@ -31,7 +31,12 @@ function addEventListenerForKeys() {
             break;
 
           case "CapsLock":
-             isCapsLockPressed();
+            let state=false;
+            document.querySelectorAll('.key_shift').forEach(el =>{
+              if (el.classList.contains('key_pressed') ) state = true;
+
+            })
+             isCapsLockPressed(state);
 
             break;
         }

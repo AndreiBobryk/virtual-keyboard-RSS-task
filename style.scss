@@ -4,18 +4,30 @@
     overflow: hidden;
   }
 
+  .title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+
   .textarea {
       display: block;
       width: 700px;
       height: 150px;
       margin: 20px auto;
+      padding: 10px;
   }
 
   .keyboard {
-      width: 830px;
-    //   height: 500px;
-      margin: 0 auto;
-      border: solid 1px black;
+    width: 827px;
+    padding: 5px;
+    margin: 0 auto;
+    border: solid 3px black;
+    border-radius: 5px;
   }
 
   .keyboard__row {
@@ -48,7 +60,7 @@
   } 
 
   .key_backspace {
-      width: 130px;
+      width: 128px;
   }
 
   .key_capsLock {
@@ -62,10 +74,10 @@
       }
   }
   .key_enter {
-      width: 133px;
+      width: 136px;
   }
   .key_shift {
-      width: 114px;
+      width: 113px;
   }
   .key_space {
       width: 363px;

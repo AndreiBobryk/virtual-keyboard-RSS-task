@@ -6,9 +6,7 @@ function domRender() {
   let data;
   const wrapper = document.createElement("div");
   wrapper.classList.add("wrapper");
-
   const textarea = document.createElement("textarea");
-
   textarea.classList.add("textarea");
   textarea.setAttribute("autofocus", true);
 
@@ -119,10 +117,28 @@ function domRender() {
     keyboard.appendChild(keyboardRow5);
 
 
+    const title = document.createElement("h1");
+    title.innerText = 'RSS Виртуальная клавиатура';
+    title.classList.add('title');
+
+    const description1 = document.createElement("p");
+    description1.innerText = 'Клавиатура создана в операционной системе Windows';
+    description1.classList.add('description');
+    
+    const description2 = document.createElement("p");
+    description2.innerText = 'Для переключения языка комбинация: левыe Shift + Alt';
+    description2.classList.add('description');
 
 
+    
+    
+  wrapper.appendChild(title)
   wrapper.appendChild(textarea);
   wrapper.appendChild(keyboard);
+  wrapper.appendChild(description1);
+  wrapper.appendChild(description2);
+
+
   document.body.appendChild(wrapper);
   document.querySelectorAll('.key').forEach((el, index) =>{
     el.setAttribute('data', code[index] )
