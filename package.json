@@ -1,0 +1,42 @@
+{
+  "name": "virtual-keyboard-RSS-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "document": false
+  },
+  "scripts": {
+    "lint": "eslint ./module",
+    "lint:fix": "eslint ./module --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreiBobryk/virtual-keyboard-RSS-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreiBobryk/virtual-keyboard-RSS-task/issues"
+  },
+  "homepage": "https://github.com/AndreiBobryk/virtual-keyboard-RSS-task#readme",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "browser": "^0.2.6",
+    "node": "^17.7.2"
+  }
+}
