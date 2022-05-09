@@ -1,7 +1,9 @@
+// import KeyboardStation from "./classKeyboardStation.js";
+import isCapsLockPressed from "./capsLock.js";
+
 function addEventListenerForKeys() {
   const input = document.querySelector("textarea");
   const keysRows1 = document.querySelectorAll(".key");
-
 
   keysRows1.forEach((key) => {
     key.addEventListener("click", (e) => {
@@ -9,48 +11,33 @@ function addEventListenerForKeys() {
 
       if (e.target.innerText.length === 1) {
         input.setRangeText(e.target.innerText, posCursor, posCursor, "end");
-
       } else {
         switch (e.target.innerText) {
-          case 'Backspace':
-          
-            input.setRangeText('', posCursor-1, posCursor, "end");
+          case "Backspace":
+            input.setRangeText("", posCursor - 1, posCursor, "end");
             break;
-          case 'Del':
-           
-            input.setRangeText('', posCursor, posCursor+1, "end");
+          case "Del":
+            input.setRangeText("", posCursor, posCursor + 1, "end");
             break;
-          case 'Enter':
-           
-            input.setRangeText('\n', posCursor, posCursor, "end");
+          case "Enter":
+            input.setRangeText("\n", posCursor, posCursor, "end");
             break;
-          case 'Tab':
-           
-            input.setRangeText('\t', posCursor, posCursor, "end");
+          case "Tab":
+            input.setRangeText("\t", posCursor, posCursor, "end");
             break;
-          case 'CapsLock':
-            const buttonCapsLock = document.querySelector('.key_capsLock');
 
-           buttonCapsLock.classList.toggle('key_capsLock_on');
-           if (buttonCapsLock.classList.contains('key_capsLock_on')) {
-            document.querySelectorAll('.key').forEach((el, index) => {
-              if (el.innerText.length ===1) el.innerText = el.innerText.toUpperCase();
-            })
-          } else {
-            document.querySelectorAll('.key').forEach((el, index) => {
-              if (el.innerText.length ===1) el.innerText = el.innerText.toLowerCase();
-            })
-          }
-            
+          case "Shift":
+            console.log("Shift");
+            break;
+
+          case "CapsLock":
+             isCapsLockPressed();
+
             break;
         }
-      
       }
-      
-  
     });
   });
-
 
   // Animation Click
 
