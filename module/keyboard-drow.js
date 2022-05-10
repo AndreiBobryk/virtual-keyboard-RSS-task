@@ -15,13 +15,17 @@ function domRender() {
   const keyboard = document.createElement('div');
   keyboard.classList.add('keyboard');
   const valueLocalStorage = localStorage.getItem('lang');
-  valueLocalStorage == 'en' ? data = dataEn : data = dataRu;
+  if (valueLocalStorage === 'en') {
+    data = dataEn;
+  } else {
+    data = dataRu;
+  }
 
   // 1 row
   const keyboardRow1 = document.createElement('div');
   keyboardRow1.classList.add('keyboard__row');
 
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 14; i += 1) {
     const key = document.createElement('div');
     key.classList.add('key');
     key.innerText = data[i][0];
@@ -37,7 +41,7 @@ function domRender() {
   const keyboardRow2 = document.createElement('div');
   keyboardRow2.classList.add('keyboard__row');
 
-  for (let i = 14; i < 29; i++) {
+  for (let i = 14; i < 29; i += 1) {
     const key = document.createElement('div');
     key.classList.add('key');
     key.innerText = data[i][0];
@@ -53,7 +57,7 @@ function domRender() {
   const keyboardRow3 = document.createElement('div');
   keyboardRow3.classList.add('keyboard__row');
 
-  for (let i = 29; i < 42; i++) {
+  for (let i = 29; i < 42; i += 1) {
     const key = document.createElement('div');
     key.classList.add('key');
     key.innerText = data[i][0];
@@ -72,7 +76,7 @@ function domRender() {
   const keyboardRow4 = document.createElement('div');
   keyboardRow4.classList.add('keyboard__row');
 
-  for (let i = 42; i < 55; i++) {
+  for (let i = 42; i < 55; i += 1) {
     const key = document.createElement('div');
     key.classList.add('key');
     key.innerText = data[i][0];
@@ -89,7 +93,7 @@ function domRender() {
   const keyboardRow5 = document.createElement('div');
   keyboardRow5.classList.add('keyboard__row');
 
-  for (let i = 55; i < 64; i++) {
+  for (let i = 55; i < 64; i += 1) {
     const key = document.createElement('div');
     key.classList.add('key');
     key.innerText = data[i][0];
