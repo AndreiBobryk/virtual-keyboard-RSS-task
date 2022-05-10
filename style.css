@@ -1,0 +1,110 @@
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+}
+
+.textarea {
+  display: block;
+  width: 700px;
+  height: 150px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.keyboard {
+  width: 827px;
+  padding: 5px;
+  margin: 0 auto;
+  border: solid 3px black;
+  border-radius: 5px;
+}
+
+.keyboard__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.key {
+  height: 45px;
+  width: 45px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.05rem;
+  margin: 3px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: yellow;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.key:hover {
+  background: grey;
+}
+
+.key_125x {
+  width: 60px;
+}
+
+.key_backspace {
+  width: 128px;
+}
+
+.key_capsLock {
+  width: 90px;
+}
+
+.key_capsLock_on {
+  border-radius: 24px;
+  background: green;
+}
+
+.key_capsLock_on:hover {
+  background: green;
+}
+
+.key_enter {
+  width: 136px;
+}
+
+.key_shift {
+  width: 113px;
+}
+
+.key_space {
+  width: 363px;
+}
+
+.key_pressed {
+  border-radius: 25px;
+  background: red;
+}
+
+.key_pressed:hover {
+  background: red;
+}
+/*# sourceMappingURL=style.css.map */

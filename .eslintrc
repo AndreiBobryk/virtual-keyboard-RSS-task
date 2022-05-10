@@ -1,0 +1,27 @@
+{
+    "extends": ["airbnb/base"],
+    "env": {
+        "browser": true,
+        "node": true
+      },
+      "globals": {
+        "document": false
+      },
+      "rules": {
+        "prefer-destructuring": ["error", {"object": true, "array": false}],
+        "import/extensions": ["off", { "js": "always", "json": "never" }]
+     
+      },
+      "settings": {
+        "import/extensions": [".js",".jsx",".ts",".tsx"],
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts",".tsx"]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js",".jsx",".ts",".tsx"]
+            }
+        }
+    }
+     
+}
