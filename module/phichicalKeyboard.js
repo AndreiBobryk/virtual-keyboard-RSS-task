@@ -32,19 +32,21 @@ function shiftKey() {
 
     if (!stateKeyboard.state.capsLock) {
       document.querySelectorAll('.key').forEach((key, index) => {
-        key.innerText = data[index][regUp];
+        const item = key;
+        item.innerText = data[index][regUp];
       });
     } else {
       document.querySelectorAll('.key').forEach((key, index) => {
+        const item = key;
         if (
           index === 0
         || (index >= 15 && index <= 26)
         || (index >= 30 && index <= 40)
         || (index >= 43 && index <= 51)
         ) {
-          key.innerText = data[index][regDown];
+          item.innerText = data[index][regDown];
         } else {
-          key.innerText = data[index][regUp];
+          item.innerText = data[index][regUp];
         }
       });
     }
@@ -65,7 +67,8 @@ function shiftKey() {
 
         checkLang();
         document.querySelectorAll('.key').forEach((key, index) => {
-          key.innerText = data[index][0];
+          const item = key;
+          item.innerText = data[index][0];
         });
       }
     }
