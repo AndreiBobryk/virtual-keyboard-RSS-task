@@ -9,7 +9,8 @@
       },
       "rules": {
         "prefer-destructuring": ["error", {"object": true, "array": false}],
-        "import/extensions": ["off", { "js": "always", "json": "never" }]
+        "import/extensions": ["off", { "js": "always", "json": "never" }],
+        "linebreak-style": 0
      
       },
       "settings": {
